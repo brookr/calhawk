@@ -1,0 +1,12 @@
+<h1>Editing events</h1>
+
+<%= error_messages_for :events %>
+
+<% form_for(@events) do |f| %>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @events %> |
+<%= link_to 'Back', events_path %>
