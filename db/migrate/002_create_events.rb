@@ -1,7 +1,7 @@
 class CreateEvents < ActiveRecord::Migration
   def self.up
     create_table :events do |t|
-      
+     
       t.string    :type,            :limit => 40 #allows polymorphism
       
       t.string    :creator,         :limit => 40
@@ -15,8 +15,7 @@ class CreateEvents < ActiveRecord::Migration
       
       t.datetime  :start
       t.datetime  :end
-      
-      
+
       t.timestamps
     end
   end

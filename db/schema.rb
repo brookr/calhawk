@@ -9,7 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 1) do
+ActiveRecord::Schema.define(:version => 2) do
+
+  create_table "events", :force => true do |t|
+    t.string   "type",        :limit => 40
+    t.string   "creator",     :limit => 40
+    t.string   "summary",     :limit => 140
+    t.string   "status",      :limit => 40
+    t.string   "location",    :limit => 140
+    t.string   "recur"
+    t.string   "timezone"
+    t.text     "description"
+    t.datetime "start"
+    t.datetime "end"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "open_id_authentication_associations", :force => true do |t|
     t.integer "issued"
