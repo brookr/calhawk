@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_filter :build_user
   
+  has_many :events
+  
   def create
     logout_keeping_session!
     if using_open_id?

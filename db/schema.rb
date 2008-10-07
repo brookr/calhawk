@@ -1,5 +1,5 @@
 # This file is auto-generated from the current state of the database. Instead of editing this file, 
-# please use the migrations feature of ActiveRecord to incrementally modify your database, and
+# please use the migrations feature of Active Record to incrementally modify your database, and
 # then regenerate this schema definition.
 #
 # Note that this schema.rb definition is the authoritative source for your database schema. If you need
@@ -9,7 +9,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 2) do
+ActiveRecord::Schema.define(:version => 3) do
+
+  create_table "event_versions", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "version"
+    t.integer  "user_id"
+    t.string   "summary",        :limit => 140
+    t.string   "status",         :limit => 40
+    t.string   "location",       :limit => 140
+    t.string   "recur"
+    t.string   "timezone"
+    t.text     "description"
+    t.datetime "start"
+    t.datetime "end"
+    t.datetime "updated_at"
+    t.string   "versioned_type", :limit => 40
+  end
 
   create_table "events", :force => true do |t|
     t.integer  "user_id"
@@ -24,6 +40,7 @@ ActiveRecord::Schema.define(:version => 2) do
     t.datetime "end"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "version"
   end
 
   create_table "open_id_authentication_associations", :force => true do |t|

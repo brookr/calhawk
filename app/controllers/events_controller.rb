@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  
+  belongs_to :user
+  
   # GET /events
   # GET /events.xml
   def index
