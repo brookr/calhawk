@@ -12,8 +12,8 @@
 ActiveRecord::Schema.define(:version => 2) do
 
   create_table "events", :force => true do |t|
+    t.integer  "user_id"
     t.string   "type",        :limit => 40
-    t.string   "creator",     :limit => 40
     t.string   "summary",     :limit => 140
     t.string   "status",      :limit => 40
     t.string   "location",    :limit => 140

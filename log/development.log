@@ -1082,3 +1082,84 @@ Processing EventsController#index (for 10.0.2.100 at 2008-10-07 10:44:44) [GET]
 Rendering template within layouts/events
 Rendering events/index
 Completed in 0.01412 (70 reqs/sec) | Rendering: 0.00727 (51%) | DB: 0.00035 (2%) | 200 OK [http://pridwen.local/events/]
+
+
+Processing EventsController#new (for 10.0.2.100 at 2008-10-07 11:24:14) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlZjlhNTNlMTk4ZTAxMmEwYmQz%0AZjRhOGVlZTI3NzdmZDk%3D--10cf27ed1721f654d5e81b5a53fb82c3614ea2f1
+  Parameters: {"action"=>"new", "controller"=>"events"}
+  [4;36;1mSQL (0.000456)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mEvent Columns (0.002749)[0m   [0mSHOW FIELDS FROM `events`[0m
+Rendering template within layouts/events
+Rendering events/new
+Completed in 0.09824 (10 reqs/sec) | Rendering: 0.08449 (86%) | DB: 0.00321 (3%) | 200 OK [http://pridwen.local/events/new]
+  [4;36;1mSQL (0.000543)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE `schema_info` (version int(11))[0m
+  [4;36;1mSQL (0.000410)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000198)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE `schema_info` (version int(11))[0m
+  [4;35;1mSQL (0.000282)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateEvents (2)
+  [4;36;1mSQL (0.002558)[0m   [0;1mDROP TABLE `events`[0m
+  [4;35;1mSQL (0.000508)[0m   [0mUPDATE schema_info SET version = 1[0m
+  [4;36;1mSQL (0.000335)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateUsers (1)
+  [4;35;1mSQL (0.033113)[0m   [0mDROP TABLE `open_id_authentication_associations`[0m
+  [4;36;1mSQL (0.003759)[0m   [0;1mDROP TABLE `open_id_authentication_nonces`[0m
+  [4;35;1mSQL (0.009460)[0m   [0mDROP TABLE `users`[0m
+  [4;36;1mSQL (0.000269)[0m   [0;1mUPDATE schema_info SET version = 0[0m
+  [4;35;1mSQL (0.000197)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.001335)[0m   [0;1mSHOW TABLES[0m
+  [4;36;1mSQL (0.000331)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE `schema_info` (version int(11))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE `schema_info` (version int(11))[0m
+  [4;35;1mSQL (0.000442)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateUsers (1)
+  [4;36;1mSQL (0.000482)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'open_id_authentication_associations': DROP TABLE `open_id_authentication_associations`[0m
+  [4;36;1mSQL (0.005277)[0m   [0;1mCREATE TABLE `open_id_authentication_associations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `issued` int(11) DEFAULT NULL, `lifetime` int(11) DEFAULT NULL, `handle` varchar(255) DEFAULT NULL, `assoc_type` varchar(255) DEFAULT NULL, `server_url` blob DEFAULT NULL, `secret` blob DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001013)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'open_id_authentication_nonces': DROP TABLE `open_id_authentication_nonces`[0m
+  [4;35;1mSQL (0.006660)[0m   [0mCREATE TABLE `open_id_authentication_nonces` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `timestamp` int(11) NOT NULL, `server_url` varchar(255) DEFAULT NULL, `salt` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000607)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'users': DROP TABLE `users`[0m
+  [4;36;1mSQL (0.005165)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(40) DEFAULT NULL, `name` varchar(100) DEFAULT '', `email` varchar(100) DEFAULT NULL, `crypted_password` varchar(40) DEFAULT NULL, `salt` varchar(40) DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL, `remember_token` varchar(40) DEFAULT NULL, `remember_token_expires_at` datetime DEFAULT NULL, `identity_url` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000673)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.011330)[0m   [0;1mCREATE INDEX `index_users_on_login` ON `users` (`login`)[0m
+  [4;35;1mSQL (0.000390)[0m   [0mUPDATE schema_info SET version = 1[0m
+  [4;36;1mSQL (0.000158)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateEvents (2)
+  [4;35;1mSQL (0.000339)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.010029)[0m   [0;1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) DEFAULT NULL, `type` varchar(40) DEFAULT NULL, `summary` varchar(140) DEFAULT NULL, `status` varchar(40) DEFAULT NULL, `location` varchar(140) DEFAULT NULL, `recur` varchar(255) DEFAULT NULL, `timezone` varchar(255) DEFAULT NULL, `description` text DEFAULT NULL, `start` datetime DEFAULT NULL, `end` datetime DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000291)[0m   [0mUPDATE schema_info SET version = 2[0m
+  [4;36;1mSQL (0.000238)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000353)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.005103)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mSQL (0.006689)[0m   [0mdescribe `events`[0m
+  [4;36;1mSQL (0.005351)[0m   [0;1mSHOW KEYS FROM `events`[0m
+  [4;35;1mSQL (0.003957)[0m   [0mSHOW FIELDS FROM `open_id_authentication_associations`[0m
+  [4;36;1mSQL (0.007606)[0m   [0;1mdescribe `open_id_authentication_associations`[0m
+  [4;35;1mSQL (0.002391)[0m   [0mSHOW KEYS FROM `open_id_authentication_associations`[0m
+  [4;36;1mSQL (0.022171)[0m   [0;1mSHOW FIELDS FROM `open_id_authentication_nonces`[0m
+  [4;35;1mSQL (0.009664)[0m   [0mdescribe `open_id_authentication_nonces`[0m
+  [4;36;1mSQL (0.001651)[0m   [0;1mSHOW KEYS FROM `open_id_authentication_nonces`[0m
+  [4;35;1mSQL (0.002973)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.010133)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.002345)[0m   [0mSHOW KEYS FROM `users`[0m
+
+
+Processing EventsController#new (for 10.0.2.100 at 2008-10-07 11:30:14) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlZjlhNTNlMTk4ZTAxMmEwYmQz%0AZjRhOGVlZTI3NzdmZDk%3D--10cf27ed1721f654d5e81b5a53fb82c3614ea2f1
+  Parameters: {"action"=>"new", "controller"=>"events"}
+  [4;36;1mEvent Columns (0.003873)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+Rendering template within layouts/events
+Rendering events/new
+Completed in 0.02830 (35 reqs/sec) | Rendering: 0.01714 (60%) | DB: 0.00387 (13%) | 200 OK [http://pridwen.local/events/new]
+
+
+Processing EventsController#index (for 10.0.2.100 at 2008-10-07 11:31:38) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlZjlhNTNlMTk4ZTAxMmEwYmQz%0AZjRhOGVlZTI3NzdmZDk%3D--10cf27ed1721f654d5e81b5a53fb82c3614ea2f1
+  Parameters: {"action"=>"index", "controller"=>"events"}
+  [4;35;1mEvent Load (0.000341)[0m   [0mSELECT * FROM `events` [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 0.01082 (92 reqs/sec) | Rendering: 0.00379 (35%) | DB: 0.00034 (3%) | 200 OK [http://pridwen.local/events/]

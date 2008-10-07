@@ -2,19 +2,20 @@ class CreateEvents < ActiveRecord::Migration
   def self.up
     create_table :events do |t|
      
-      t.string    :type,            :limit => 40 #allows polymorphism
+      t.references  :user
       
-      t.string    :creator,         :limit => 40
-      t.string    :summary,         :limit => 140
-      t.string    :status,          :limit => 40
-      t.string    :location,        :limit => 140
-      t.string    :recur
-      t.string    :timezone         
-      
-      t.text      :description      
-      
-      t.datetime  :start
-      t.datetime  :end
+      t.string      :type,            :limit => 40 #allows polymorphism
+                    
+      t.string      :summary,         :limit => 140
+      t.string      :status,          :limit => 40
+      t.string      :location,        :limit => 140
+      t.string      :recur
+      t.string      :timezone         
+                    
+      t.text        :description      
+                    
+      t.datetime    :start
+      t.datetime    :end
 
       t.timestamps
     end

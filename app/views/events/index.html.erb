@@ -2,12 +2,30 @@
 
 <table>
   <tr>
+    <th>User</th>
     <th>Type</th>
+    <th>Summary</th>
+    <th>Status</th>
+    <th>Location</th>
+    <th>Recur</th>
+    <th>Timezone</th>
+    <th>Description</th>
+    <th>Start</th>
+    <th>End</th>
   </tr>
 
 <% for event in @events %>
   <tr>
+    <td><%=h event.user_id %></td>
     <td><%=h event.type %></td>
+    <td><%=h event.summary %></td>
+    <td><%=h event.status %></td>
+    <td><%=h event.location %></td>
+    <td><%=h event.recur %></td>
+    <td><%=h event.timezone %></td>
+    <td><%=h event.description %></td>
+    <td><%=h event.start %></td>
+    <td><%=h event.end %></td>
     <td><%= link_to 'Show', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
     <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
