@@ -1,2 +1,32 @@
 Use this README file to introduce your application and point to useful places in the API for learning more.
 Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+
+=============================
+Changes to casehawk_lorp:
+
+Database:
+x 'type' column changed to 'event_type'
+x 'calendar' column changed to 'calendar_id'
+x added col user_id for responsible user
+x added col completed:boolean, default 0
+x set flag for completed events
+x capitalized all event_type values
+x deleted events with a type containing a ')'
+x clean up any other strange event_type values
+x add col created_at
+x col edittime changed to updated_at
+x change creator to creator_id CAREFUL: be sure to get all ids to replace string values
+
+x added fields to user table: 
+ALTER TABLE `users` ADD `login` VARCHAR( 50 ) NULL AFTER `user_id` ,
+ADD `name` VARCHAR( 100 ) NULL AFTER `login` ,
+ADD `email` VARCHAR( 100 ) NULL AFTER `name` ,
+ADD `crypted_password` VARCHAR( 50 ) NULL AFTER `email` ,
+ADD `salt` VARCHAR( 50 ) NULL AFTER `crypted_password` ,
+ADD `created_at` DATETIME NULL AFTER `salt` ,
+ADD `updated_at` DATETIME NULL AFTER `created_at` ,
+ADD `remember_token` VARCHAR( 50 ) NULL AFTER `updated_at` ,
+ADD `remember_token_expires_at` DATETIME NULL AFTER `remember_token` ,
+ADD `identity_url` VARCHAR( 255 ) NULL AFTER `remember_token_expires_at` ;
+
+

@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   
-  belongs_to :user
+  require_dependency 'event'
+  
   
   # GET /events
   # GET /events.xml
@@ -39,7 +40,7 @@ class EventsController < ApplicationController
   def edit
     @event = Event.find(params[:id])
   end
-
+  
   # POST /events
   # POST /events.xml
   def create
@@ -65,7 +66,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.update_attributes(params[:event])
         flash[:notice] = 'Event was successfully updated.'
-        format.html { redirect_to(@event) }
+        format.html { redirect_to( :controller => "events", :action => "show", :id => @event.id ) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -81,6 +82,7 @@ class EventsController < ApplicationController
     @event.destroy
 
     respond_to do |format|
+      flash[:notice] = 'Event was successfully deleted.'
       format.html { redirect_to(events_url) }
       format.xml  { head :ok }
     end

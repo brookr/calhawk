@@ -1,0 +1,6 @@
+<% events = Event.list_by_day(day)  %>
+<ul>
+<% events.each do |e| %>
+  <li> <%=h e.summary %> </li>
+<% end %>
+</ul>

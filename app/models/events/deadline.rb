@@ -1,0 +1,4 @@
+class Deadline < Event
+  
+  
+end

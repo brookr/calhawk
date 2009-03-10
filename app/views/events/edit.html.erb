@@ -1,58 +1,68 @@
 <h1>Editing event</h1>
 
-<%= error_messages_for :event %>
+<% form_for(@event, :url => { :controller => "events", :action => "update" }) do |f| %>
+  <%= f.error_messages %>
 
-<% form_for(@event) do |f| %>
   <p>
-    <b>User</b><br />
+    <%= f.label :case_id %><br />
+    <%= f.text_field :case_id %>
+  </p>
+  <p>
+    <%= f.label :creator_id %><br />
+    <%= f.text_field :creator_id %>
+  </p>
+  <p>
+    <%= f.label :user_id %><br />
     <%= f.text_field :user_id %>
   </p>
-
   <p>
-    <b>Type</b><br />
-    <%= f.text_field :type %>
-  </p>
-
-  <p>
-    <b>Summary</b><br />
+    <%= f.label :summary %><br />
     <%= f.text_field :summary %>
   </p>
-
   <p>
-    <b>Status</b><br />
-    <%= f.text_field :status %>
-  </p>
-
-  <p>
-    <b>Location</b><br />
-    <%= f.text_field :location %>
-  </p>
-
-  <p>
-    <b>Recur</b><br />
-    <%= f.text_field :recur %>
-  </p>
-
-  <p>
-    <b>Timezone</b><br />
-    <%= f.text_field :timezone %>
-  </p>
-
-  <p>
-    <b>Description</b><br />
+    <%= f.label :description %><br />
     <%= f.text_area :description %>
   </p>
-
   <p>
-    <b>Start</b><br />
-    <%= f.datetime_select :start %>
+    <%= f.label :status %><br />
+    <%= f.text_area :status %>
   </p>
-
   <p>
-    <b>End</b><br />
-    <%= f.datetime_select :end %>
+    <%= f.label :dtstart %><br />
+    <%= f.datetime_select :dtstart %>
   </p>
-
+  <p>
+    <%= f.label :dtend %><br />
+    <%= f.datetime_select :dtend %>
+  </p>
+  <p>
+    <%= f.label :rrule %><br />
+    <%= f.text_field :rrule %>
+  </p>
+  <p>
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </p>
+  <p>
+    <%= f.label :alarm %><br />
+    <%= f.text_field :alarm %>
+  </p>
+  <p>
+    <%= f.label :calendar_id %><br />
+    <%= f.text_field :calendar_id %>
+  </p>
+  <p>
+    <%= f.label :event_type %><br />
+    <%= f.text_field :event_type %>
+  </p>
+  <p>
+    <%= f.label :busy %><br />
+    <%= f.check_box :busy %>
+  </p>
+  <p>
+    <%= f.label :timezone %><br />
+    <%= f.text_field :timezone %>
+  </p>
   <p>
     <%= f.submit "Update" %>
   </p>

@@ -1,11 +1,16 @@
 <p>
-  <b>User:</b>
-  <%=h @event.user_id %>
+  <b>Case:</b>
+  <%=h @event.case_id %>
 </p>
 
 <p>
-  <b>Type:</b>
-  <%=h @event.type %>
+  <b>Creator:</b>
+  <%=h @event.creator_id %>
+</p>
+
+<p>
+  <b>Responsible:</b>
+  <%=h @event.user_id %>
 </p>
 
 <p>
@@ -14,8 +19,28 @@
 </p>
 
 <p>
+  <b>Description:</b>
+  <%=h @event.description %>
+</p>
+
+<p>
   <b>Status:</b>
   <%=h @event.status %>
+</p>
+
+<p>
+  <b>Dtstart:</b>
+  <%=h @event.dtstart %>
+</p>
+
+<p>
+  <b>Dtend:</b>
+  <%=h @event.dtend %>
+</p>
+
+<p>
+  <b>Rrule:</b>
+  <%=h @event.rrule %>
 </p>
 
 <p>
@@ -24,28 +49,28 @@
 </p>
 
 <p>
-  <b>Recur:</b>
-  <%=h @event.recur %>
+  <b>Alarm:</b>
+  <%=h @event.alarm %>
+</p>
+
+<p>
+  <b>Calendar:</b>
+  <%=h @event.calendar_id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%=h @event.event_type %>
+</p>
+
+<p>
+  <b>Busy:</b>
+  <%=h @event.busy %>
 </p>
 
 <p>
   <b>Timezone:</b>
   <%=h @event.timezone %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%=h @event.description %>
-</p>
-
-<p>
-  <b>Start:</b>
-  <%=h @event.start %>
-</p>
-
-<p>
-  <b>End:</b>
-  <%=h @event.end %>
 </p>
 
 

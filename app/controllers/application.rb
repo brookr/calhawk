@@ -11,4 +11,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # :secret => 'ef0abd1ccfc828817c1d3b6905deb19b'
   
   filter_parameter_logging :password
+  
+  ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS.merge!(
+    :default => "%m-%d-%Y %I:%M%p",
+    :date_time12 => "%m-%d-%Y %I:%M%p",
+    :date_time24 => "%m-%d-%Y %H:%M"
+  )
+  
 end

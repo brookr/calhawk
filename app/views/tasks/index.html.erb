@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th>Case/Cal</th>
+    <th>Creator</th>
+    <th>Type</th>
+    <th>Summary</th>
+    <th>Start</th>
+    <th>End</th>
+    <th>View</th>
+ </tr>
+
+<% for event in @uncompleted_past %>
+<% #puts event.creator_id.inspect %>
+  <tr>
+    <td><%=h event.calendar.name %></td>
+    <td><%=h event.user.user_name.capitalize %></td>
+    <td><%=h event.event_type %></td>
+    <td><%=h event.summary %></td>
+    <td><%=h event.dtstart %></td>
+    <td><%=h event.dtend %></td>
+    <td><%= link_to 'Show', :controller => 'Events', :action => 'show', :id => event.id %></td>
+    
+  </tr>
+<% end %>
+</table>

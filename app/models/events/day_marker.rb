@@ -1,0 +1,2 @@
+class DayMarker < Event
+end

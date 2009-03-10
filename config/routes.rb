@@ -36,6 +36,12 @@ ActionController::Routing::Routes.draw do |map|
   # See how all your routes lay out with "rake routes"
 
   map.resources :users
+  map.resources :events
+  
+  map.resources :appointments
+  map.resources :court_dates
+  map.resources :targets
+  map.resources :deadlines
 
   map.open_id_complete 'opensession', :controller => "sessions", :action => "create", :requirements => { :method => :get }
   map.open_id_create 'opencreate', :controller => "users", :action => "create", :requirements => { :method => :get }

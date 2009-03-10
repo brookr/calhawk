@@ -1,0 +1,4 @@
+class Appointment < Event
+  
+  
+end

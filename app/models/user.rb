@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   include Authentication
   include Authentication::ByPassword
   include Authentication::ByCookieToken
+  
+  set_primary_key "user_id"
+  has_many :events, :foreign_key => "creator_id"
 
 
   validates_presence_of     :login,    :if => :not_using_openid?

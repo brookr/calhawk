@@ -1,34 +1,53 @@
 <h1>Listing events</h1>
+<%=h params.inspect %>
+
+
+<%= calendar(:year => 2009, :week => 8) do |day|
+      
+      render :partial => 'day_list', :locals => {:day => day}
+      
+    end
+  
+%>
 
 <table>
   <tr>
-    <th>User</th>
-    <th>Type</th>
+    <th>Case</th>
+    <th>Creator</th>
+    <th>Responsible</th>
     <th>Summary</th>
-    <th>Status</th>
-    <th>Location</th>
-    <th>Recur</th>
-    <th>Timezone</th>
     <th>Description</th>
-    <th>Start</th>
-    <th>End</th>
-  </tr>
+    <th>Status</th>
+    <th>Dtstart</th>
+    <th>Dtend</th>
+    <th>Rrule</th>
+    <th>Location</th>
+    <th>Alarm</th>
+    <th>Calendar</th>
+    <th>Kind</th>
+    <th>Busy</th>
+    <th>Timezone</th>  </tr>
 
 <% for event in @events %>
   <tr>
+    <td><%=h event.case_id %></td>
+    <td><%=h event.creator_id %></td>
     <td><%=h event.user_id %></td>
-    <td><%=h event.type %></td>
     <td><%=h event.summary %></td>
-    <td><%=h event.status %></td>
-    <td><%=h event.location %></td>
-    <td><%=h event.recur %></td>
-    <td><%=h event.timezone %></td>
     <td><%=h event.description %></td>
-    <td><%=h event.start %></td>
-    <td><%=h event.end %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h event.status %></td>
+    <td><%=h event.dtstart %></td>
+    <td><%=h event.dtend %></td>
+    <td><%=h event.rrule %></td>
+    <td><%=h event.location %></td>
+    <td><%=h event.alarm %></td>
+    <td><%=h event.calendar_id %></td>
+    <td><%=h event.event_type %></td>
+    <td><%=h event.busy %></td>
+    <td><%=h event.timezone %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => event.id %></td>
+    
+    <td><%= link_to 'Edit', :action => 'edit', :id => event.id %></td>
   </tr>
 <% end %>
 </table>
@@ -36,3 +55,6 @@
 <br />
 
 <%= link_to 'New event', new_event_path %>
+
+<br />
+<br />
