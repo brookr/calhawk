@@ -10,7 +10,7 @@
  </tr>
 
 <% for event in @uncompleted_past %>
-<% #puts event.creator_id.inspect %>
+<% #puts event.inspect %>
   <tr>
     <td><%=h event.calendar.name %></td>
     <td><%=h event.user.user_name.capitalize %></td>

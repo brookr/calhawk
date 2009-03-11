@@ -11,9 +11,14 @@ test:
   username: root
   password:
 
+production:
+  adapter: mysql 
+  database: casehawk_lorp
+  host: localhost
+
 production_lf:
   adapter: mysql
   host: lawfortress.com
   database: casehawk_lorp
-  username: casehawk_demo
-  password: !kwaHesaC
+  username: casehawk_rails
+  password: st4rw4rs

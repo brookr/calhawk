@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
   
+  establish_connection :production_lf #if RAILS_ENV == "production"
+  
   set_primary_key "event_id"
   self.inheritance_column = 'event_type'
   

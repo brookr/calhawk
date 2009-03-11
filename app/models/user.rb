@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   include Authentication::ByPassword
   include Authentication::ByCookieToken
   
+  establish_connection :production_lf #if RAILS_ENV == "production"
+  
   set_primary_key "user_id"
   has_many :events, :foreign_key => "creator_id"
 
