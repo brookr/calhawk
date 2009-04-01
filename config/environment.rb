@@ -62,4 +62,13 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
 
+
+  
 end
+
+ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS.merge!(
+  :default => "%m-%d-%Y %I:%M%p",
+  :date_time12 => "%m-%d-%Y %I:%M%p",
+  :date_time24 => "%m-%d-%Y %H:%M"
+)
+

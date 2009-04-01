@@ -12,10 +12,5 @@ class ApplicationController < ActionController::Base
   
   filter_parameter_logging :password
   
-  ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS.merge!(
-    :default => "%m-%d-%Y %I:%M%p",
-    :date_time12 => "%m-%d-%Y %I:%M%p",
-    :date_time24 => "%m-%d-%Y %H:%M"
-  )
   
 end
