@@ -69,6 +69,9 @@ end
 ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS.merge!(
   :default => "%m-%d-%Y %I:%M%p",
   :date_time12 => "%m-%d-%Y %I:%M%p",
-  :date_time24 => "%m-%d-%Y %H:%M"
+  :date_time24 => "%m-%d-%Y %H:%M",
+  :small => "%b %e, %l:%M %p",
+  :ymd => "%Y-%m-%d",
+  :year => "%Y"
 )
 

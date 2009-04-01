@@ -21778,3 +21778,347 @@ Completed in 15998ms (View: 14407, DB: 0) | 200 OK [http://pridwen.local/tasks]
   [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
   [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
   [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('0')[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ActionController::Base#show (for 172.16.246.1 at 2009-04-01 14:21:45) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  app/controllers/users_controller.rb:1
+
+Rendered rescues/_trace (46.8ms)
+Rendered rescues/_request_and_response (3.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 172.16.246.1 at 2009-04-01 14:22:36) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mSQL (31.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (36.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 847ms (View: 251, DB: 0) | 200 OK [http://pridwen.local/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 172.16.246.1 at 2009-04-01 14:22:43) [GET]
+
+ActionController::RoutingError (No route matches "/calendar" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#index (for 172.16.246.1 at 2009-04-01 14:22:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"events"}
+  [4;36;1mSQL (62.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mEvent Load (1178.6ms)[0m   [0mSELECT * FROM `events` [0m
+  [4;36;1mEvent Columns (513.4ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;35;1mEvent Load (70.8ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-15%' ) [0m
+Rendered events/_day_list (74.0ms)
+  [4;36;1mEvent Load (71.2ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-16%' ) [0m
+  [4;35;1mDeadline Columns (69.7ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mAppointment Columns (68.1ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+Rendered events/_day_list (224.0ms)
+  [4;35;1mEvent Load (78.0ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-17%' ) [0m
+  [4;36;1mCourtDate Columns (68.9ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mTarget Columns (238.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mDayMarker Columns (68.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+Rendered events/_day_list (479.1ms)
+  [4;35;1mEvent Load (72.9ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-18%' ) [0m
+Rendered events/_day_list (74.3ms)
+  [4;36;1mEvent Load (70.4ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-19%' ) [0m
+Rendered events/_day_list (72.9ms)
+  [4;35;1mEvent Load (72.8ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-20%' ) [0m
+Rendered events/_day_list (75.0ms)
+  [4;36;1mEvent Load (72.8ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-21%' ) [0m
+Rendered events/_day_list (74.1ms)
+  [4;35;1mEvent Load (70.3ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-22%' ) [0m
+Rendered events/_day_list (71.3ms)
+  [4;36;1mEvent Load (71.2ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-23%' ) [0m
+Rendered events/_day_list (73.2ms)
+  [4;35;1mEvent Load (71.8ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-24%' ) [0m
+Rendered events/_day_list (73.4ms)
+  [4;36;1mEvent Load (71.7ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-25%' ) [0m
+Rendered events/_day_list (73.5ms)
+  [4;35;1mEvent Load (71.6ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-26%' ) [0m
+Rendered events/_day_list (72.9ms)
+  [4;36;1mEvent Load (565.0ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-27%' ) [0m
+Rendered events/_day_list (568.4ms)
+  [4;35;1mEvent Load (73.5ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-28%' ) [0m
+Rendered events/_day_list (74.7ms)
+  [4;36;1mEvent Load (70.4ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-01%' ) [0m
+Rendered events/_day_list (71.2ms)
+  [4;35;1mEvent Load (73.5ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-02%' ) [0m
+Rendered events/_day_list (74.7ms)
+  [4;36;1mEvent Load (71.9ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-03%' ) [0m
+Rendered events/_day_list (72.8ms)
+  [4;35;1mEvent Load (72.0ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-04%' ) [0m
+Rendered events/_day_list (190.8ms)
+  [4;36;1mEvent Load (209.5ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-05%' ) [0m
+Rendered events/_day_list (210.9ms)
+  [4;35;1mEvent Load (78.5ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-06%' ) [0m
+Rendered events/_day_list (81.5ms)
+  [4;36;1mEvent Load (71.3ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-07%' ) [0m
+Rendered events/_day_list (73.0ms)
+  [4;35;1mEvent Load (70.7ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-08%' ) [0m
+Rendered events/_day_list (72.6ms)
+  [4;36;1mEvent Load (77.3ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-09%' ) [0m
+Rendered events/_day_list (80.1ms)
+  [4;35;1mEvent Load (75.4ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-10%' ) [0m
+Rendered events/_day_list (77.6ms)
+  [4;36;1mEvent Load (74.5ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-11%' ) [0m
+Rendered events/_day_list (76.7ms)
+  [4;35;1mEvent Load (74.1ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-12%' ) [0m
+Rendered events/_day_list (76.0ms)
+  [4;36;1mEvent Load (75.1ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-13%' ) [0m
+Rendered events/_day_list (76.4ms)
+  [4;35;1mEvent Load (74.1ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-14%' ) [0m
+Rendered events/_day_list (75.0ms)
+  [4;36;1mEvent Load (549.1ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-15%' ) [0m
+Rendered events/_day_list (550.5ms)
+  [4;35;1mEvent Load (138.9ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-16%' ) [0m
+Rendered events/_day_list (140.9ms)
+  [4;36;1mEvent Load (71.9ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-17%' ) [0m
+Rendered events/_day_list (72.9ms)
+  [4;35;1mEvent Load (74.1ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-18%' ) [0m
+Rendered events/_day_list (75.4ms)
+  [4;36;1mEvent Load (74.3ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-19%' ) [0m
+Rendered events/_day_list (75.9ms)
+  [4;35;1mEvent Load (76.5ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-20%' ) [0m
+Rendered events/_day_list (77.9ms)
+  [4;36;1mEvent Load (312.5ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-21%' ) [0m
+Rendered events/_day_list (313.4ms)
+  [4;35;1mEvent Load (70.7ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-22%' ) [0m
+Rendered events/_day_list (72.4ms)
+  [4;36;1mEvent Load (77.0ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-23%' ) [0m
+Rendered events/_day_list (80.1ms)
+  [4;35;1mEvent Load (71.3ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-24%' ) [0m
+Rendered events/_day_list (73.1ms)
+  [4;36;1mEvent Load (70.5ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-25%' ) [0m
+Rendered events/_day_list (71.8ms)
+  [4;35;1mEvent Load (72.1ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-26%' ) [0m
+Rendered events/_day_list (74.3ms)
+  [4;36;1mEvent Load (75.7ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-27%' ) [0m
+Rendered events/_day_list (81.3ms)
+  [4;35;1mEvent Load (70.6ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-28%' ) [0m
+Rendered events/_day_list (71.4ms)
+Completed in 8658ms (View: 6020, DB: 0) | 200 OK [http://pridwen.local/events]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#index (for 192.168.1.17 at 2009-04-01 14:28:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"events"}
+  [4;35;1mSQL (38.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mEvent Load (0.0ms)[0m   [0;1mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2009-04-01'%' )' at line 1: SELECT * FROM `events` WHERE (dtstart LIKE ''2009-04-01'%' ) [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2009-04-01'%' )' at line 1: SELECT * FROM `events` WHERE (dtstart LIKE ''2009-04-01'%' ) ):
+  app/controllers/events_controller.rb:9:in `index'
+
+Rendered rescues/_trace (55.9ms)
+Rendered rescues/_request_and_response (2.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#index (for 192.168.1.17 at 2009-04-01 14:29:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"events"}
+  [4;36;1mSQL (37.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mEvent Load (39.1ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-04-01' ) [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;36;1mEvent Load (35.2ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-15%' ) [0m
+Rendered events/_day_list (37.4ms)
+  [4;35;1mEvent Load (34.7ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-16%' ) [0m
+  [4;36;1mEvent Columns (40.0ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mDeadline Columns (36.2ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mAppointment Columns (36.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+Rendered events/_day_list (182.8ms)
+  [4;35;1mEvent Load (35.5ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-17%' ) [0m
+  [4;36;1mCourtDate Columns (35.8ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mTarget Columns (34.1ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mDayMarker Columns (35.3ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+Rendered events/_day_list (184.4ms)
+  [4;35;1mEvent Load (33.9ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-18%' ) [0m
+Rendered events/_day_list (37.0ms)
+  [4;36;1mEvent Load (44.5ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-19%' ) [0m
+Rendered events/_day_list (46.7ms)
+  [4;35;1mEvent Load (41.7ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-20%' ) [0m
+Rendered events/_day_list (43.9ms)
+  [4;36;1mEvent Load (41.3ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-21%' ) [0m
+Rendered events/_day_list (42.9ms)
+  [4;35;1mEvent Load (39.1ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-22%' ) [0m
+Rendered events/_day_list (40.6ms)
+  [4;36;1mEvent Load (37.7ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-23%' ) [0m
+Rendered events/_day_list (39.7ms)
+  [4;35;1mEvent Load (43.1ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-24%' ) [0m
+Rendered events/_day_list (44.4ms)
+  [4;36;1mEvent Load (36.9ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-25%' ) [0m
+Rendered events/_day_list (38.5ms)
+  [4;35;1mEvent Load (44.1ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-26%' ) [0m
+Rendered events/_day_list (45.4ms)
+  [4;36;1mEvent Load (45.5ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-27%' ) [0m
+Rendered events/_day_list (48.6ms)
+  [4;35;1mEvent Load (37.7ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-28%' ) [0m
+Rendered events/_day_list (39.3ms)
+  [4;36;1mEvent Load (36.4ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-01%' ) [0m
+Rendered events/_day_list (37.1ms)
+  [4;35;1mEvent Load (39.6ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-02%' ) [0m
+Rendered events/_day_list (41.0ms)
+  [4;36;1mEvent Load (39.2ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-03%' ) [0m
+Rendered events/_day_list (40.9ms)
+  [4;35;1mEvent Load (38.3ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-04%' ) [0m
+Rendered events/_day_list (40.2ms)
+  [4;36;1mEvent Load (38.9ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-05%' ) [0m
+Rendered events/_day_list (40.9ms)
+  [4;35;1mEvent Load (37.4ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-06%' ) [0m
+Rendered events/_day_list (39.9ms)
+  [4;36;1mEvent Load (36.7ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-07%' ) [0m
+Rendered events/_day_list (38.0ms)
+  [4;35;1mEvent Load (39.9ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-08%' ) [0m
+Rendered events/_day_list (41.0ms)
+  [4;36;1mEvent Load (46.4ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-09%' ) [0m
+Rendered events/_day_list (48.7ms)
+  [4;35;1mEvent Load (40.1ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-10%' ) [0m
+Rendered events/_day_list (41.8ms)
+  [4;36;1mEvent Load (39.2ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-11%' ) [0m
+Rendered events/_day_list (41.5ms)
+  [4;35;1mEvent Load (37.9ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-12%' ) [0m
+Rendered events/_day_list (39.8ms)
+  [4;36;1mEvent Load (38.7ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-13%' ) [0m
+Rendered events/_day_list (41.0ms)
+  [4;35;1mEvent Load (41.4ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-14%' ) [0m
+Rendered events/_day_list (42.7ms)
+  [4;36;1mEvent Load (41.8ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-15%' ) [0m
+Rendered events/_day_list (42.7ms)
+  [4;35;1mEvent Load (41.1ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-16%' ) [0m
+Rendered events/_day_list (44.4ms)
+  [4;36;1mEvent Load (46.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-17%' ) [0m
+Rendered events/_day_list (49.1ms)
+  [4;35;1mEvent Load (38.4ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-18%' ) [0m
+Rendered events/_day_list (40.0ms)
+  [4;36;1mEvent Load (39.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-19%' ) [0m
+Rendered events/_day_list (40.8ms)
+  [4;35;1mEvent Load (38.0ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-20%' ) [0m
+Rendered events/_day_list (39.4ms)
+  [4;36;1mEvent Load (37.2ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-21%' ) [0m
+Rendered events/_day_list (37.9ms)
+  [4;35;1mEvent Load (41.0ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-22%' ) [0m
+Rendered events/_day_list (41.7ms)
+  [4;36;1mEvent Load (39.3ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-23%' ) [0m
+Rendered events/_day_list (41.5ms)
+  [4;35;1mEvent Load (37.7ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-24%' ) [0m
+Rendered events/_day_list (38.7ms)
+  [4;36;1mEvent Load (37.2ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-25%' ) [0m
+Rendered events/_day_list (38.4ms)
+  [4;35;1mEvent Load (34.8ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-26%' ) [0m
+Rendered events/_day_list (36.5ms)
+  [4;36;1mEvent Load (268.9ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-27%' ) [0m
+Rendered events/_day_list (270.6ms)
+  [4;35;1mEvent Load (39.4ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-28%' ) [0m
+Rendered events/_day_list (40.2ms)
+Completed in 2577ms (View: 2311, DB: 0) | 200 OK [http://pridwen.local/events]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EventsController#index (for 192.168.1.17 at 2009-04-01 14:31:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"events"}
+  [4;35;1mSQL (63.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mEvent Load (75.9ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-04-01%' ) [0m
+  [4;35;1mEvent Columns (68.8ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;36;1mEvent Load (473.8ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-15%' ) [0m
+Rendered events/_day_list (474.7ms)
+  [4;35;1mEvent Load (72.2ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-16%' ) [0m
+  [4;36;1mDeadline Columns (68.3ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mAppointment Columns (68.7ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+Rendered events/_day_list (227.4ms)
+  [4;36;1mEvent Load (77.5ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-17%' ) [0m
+  [4;35;1mCourtDate Columns (68.5ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mTarget Columns (67.6ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mDayMarker Columns (287.1ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+Rendered events/_day_list (538.9ms)
+  [4;36;1mEvent Load (74.1ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-18%' ) [0m
+Rendered events/_day_list (75.8ms)
+  [4;35;1mEvent Load (71.2ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-19%' ) [0m
+Rendered events/_day_list (73.0ms)
+  [4;36;1mEvent Load (73.9ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-20%' ) [0m
+Rendered events/_day_list (75.7ms)
+  [4;35;1mEvent Load (71.2ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-21%' ) [0m
+Rendered events/_day_list (72.5ms)
+  [4;36;1mEvent Load (72.8ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-22%' ) [0m
+Rendered events/_day_list (74.2ms)
+  [4;35;1mEvent Load (70.9ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-23%' ) [0m
+Rendered events/_day_list (73.6ms)
+  [4;36;1mEvent Load (70.5ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-24%' ) [0m
+Rendered events/_day_list (72.2ms)
+  [4;35;1mEvent Load (72.6ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-25%' ) [0m
+Rendered events/_day_list (75.2ms)
+  [4;36;1mEvent Load (70.1ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-26%' ) [0m
+Rendered events/_day_list (72.0ms)
+  [4;35;1mEvent Load (76.8ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-27%' ) [0m
+Rendered events/_day_list (78.5ms)
+  [4;36;1mEvent Load (490.6ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-02-28%' ) [0m
+Rendered events/_day_list (492.4ms)
+  [4;35;1mEvent Load (70.0ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-01%' ) [0m
+Rendered events/_day_list (71.2ms)
+  [4;36;1mEvent Load (75.0ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-02%' ) [0m
+Rendered events/_day_list (77.1ms)
+  [4;35;1mEvent Load (83.0ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-03%' ) [0m
+Rendered events/_day_list (84.7ms)
+  [4;36;1mEvent Load (78.4ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-04%' ) [0m
+Rendered events/_day_list (80.8ms)
+  [4;35;1mEvent Load (171.3ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-05%' ) [0m
+Rendered events/_day_list (172.8ms)
+  [4;36;1mEvent Load (416.3ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-06%' ) [0m
+Rendered events/_day_list (420.4ms)
+  [4;35;1mEvent Load (155.6ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-07%' ) [0m
+Rendered events/_day_list (156.8ms)
+  [4;36;1mEvent Load (72.0ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-08%' ) [0m
+Rendered events/_day_list (73.2ms)
+  [4;35;1mEvent Load (94.5ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-09%' ) [0m
+Rendered events/_day_list (103.9ms)
+  [4;36;1mEvent Load (75.9ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-10%' ) [0m
+Rendered events/_day_list (79.3ms)
+  [4;35;1mEvent Load (75.1ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-11%' ) [0m
+Rendered events/_day_list (77.2ms)
+  [4;36;1mEvent Load (77.5ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-12%' ) [0m
+Rendered events/_day_list (79.9ms)
+  [4;35;1mEvent Load (523.9ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-13%' ) [0m
+Rendered events/_day_list (526.3ms)
+  [4;36;1mEvent Load (71.5ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-14%' ) [0m
+Rendered events/_day_list (72.5ms)
+  [4;35;1mEvent Load (72.4ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-15%' ) [0m
+Rendered events/_day_list (73.3ms)
+  [4;36;1mEvent Load (78.2ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-16%' ) [0m
+Rendered events/_day_list (81.0ms)
+  [4;35;1mEvent Load (83.9ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-17%' ) [0m
+Rendered events/_day_list (86.4ms)
+  [4;36;1mEvent Load (73.3ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-18%' ) [0m
+Rendered events/_day_list (74.4ms)
+  [4;35;1mEvent Load (76.7ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-19%' ) [0m
+Rendered events/_day_list (78.2ms)
+  [4;36;1mEvent Load (282.8ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-20%' ) [0m
+Rendered events/_day_list (284.3ms)
+  [4;35;1mEvent Load (70.0ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-21%' ) [0m
+Rendered events/_day_list (70.6ms)
+  [4;36;1mEvent Load (74.8ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-22%' ) [0m
+Rendered events/_day_list (75.4ms)
+  [4;35;1mEvent Load (76.9ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-23%' ) [0m
+Rendered events/_day_list (88.0ms)
+  [4;36;1mEvent Load (71.3ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-24%' ) [0m
+Rendered events/_day_list (72.4ms)
+  [4;35;1mEvent Load (69.8ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-25%' ) [0m
+Rendered events/_day_list (70.8ms)
+  [4;36;1mEvent Load (75.0ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-26%' ) [0m
+Rendered events/_day_list (76.7ms)
+  [4;35;1mEvent Load (74.7ms)[0m   [0mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-27%' ) [0m
+Rendered events/_day_list (76.0ms)
+  [4;36;1mEvent Load (70.7ms)[0m   [0;1mSELECT * FROM `events` WHERE (dtstart LIKE '2009-03-28%' ) [0m
+Rendered events/_day_list (71.4ms)
+Completed in 6416ms (View: 5866, DB: 0) | 200 OK [http://pridwen.local/events]

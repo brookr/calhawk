@@ -1,0 +1,2 @@
+#!/bin/bash
+cap -f config/morph_deploy.rb morph:deploy

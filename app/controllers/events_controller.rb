@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.xml
   def index
-    @events = Event.find(:all)
+    @events = Event.find(:all, :conditions => "dtstart LIKE '#{Time.now.to_s(:ymd)}%' ")
 
     respond_to do |format|
       format.html # index.html.erb
