@@ -9,10 +9,10 @@ namespace :sync do
       begin
         t = Tag.find_or_initialize_by_id(Case.find_by_case_title(title).id)
         t.update_attribute(:name, title)
-        print '.'
+        puts "Updated case #{t.id} with title #{t.name}"
       rescue
         errors << title
-        print 'e'
+        puts "Error in syncing: #{title}"
       end
       puts
       puts "Could not sync: #{errors.join(', ')}." unless errors.blank
