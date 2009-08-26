@@ -6,6 +6,6 @@ class Calendar < ActiveRecord::Base
   self.inheritance_column = "cal_type"
   
   has_many :events
-  
+  belongs_to :casemap, :foreign_key => "link_id"
   
 end
