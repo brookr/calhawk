@@ -1,6 +1,6 @@
 class Tag < ActiveRecord::Base
   
-  establish_connection :production_ch
+  establish_connection :production
   
   
 end
