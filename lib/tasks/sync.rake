@@ -15,7 +15,7 @@ namespace :sync do
         puts "Error in syncing: #{title}"
       end
       puts
-      puts "Could not sync: #{errors.join(', ')}." unless errors.blank
+      puts "Could not sync: #{errors.join(', ')}." unless errors.blank?
     end
   end
 end
