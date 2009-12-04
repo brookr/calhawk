@@ -9,6 +9,7 @@ namespace :sync do
       begin
         t = Tag.find_or_initialize_by_id(Case.find_by_case_title(title).id)
         t.update_attribute(:name, title)
+        t.update_attribute(:account_id, 2)
         puts "#{Time.now}: Updated case #{t.id} with title #{t.name}"
       rescue
         errors << title
