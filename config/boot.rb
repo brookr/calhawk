@@ -67,7 +67,8 @@ module Rails
 
     class << self
       def rubygems_version
-        Gem::RubyGemsVersion if defined? Gem::RubyGemsVersion
+        return '1.3.7' # Hack past an error.
+        #Gem::RubyGemsVersion if defined? Gem::RubyGemsVersion
       end
 
       def gem_version
